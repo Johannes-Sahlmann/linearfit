@@ -23,12 +23,10 @@ Please see the test in test_linearfit.py for an example usage.
 Basic example usage (Fitting a straight line to data with uncertainties in y)
 -------------
 
-```python
-# independent variable
-x = np.array([0.0, 0.9, 1.8, 2.6, 3.3, 4.4, 5.2, 6.1, 6.5,7.4])
-# dependent variable	
-y = np.array([5.9, 5.4, 4.4, 4.6, 3.5, 3.7, 2.8, 2.8, 2.4, 1.5])
-```
+    # independent variable
+    x = np.array([0.0, 0.9, 1.8, 2.6, 3.3, 4.4, 5.2, 6.1, 6.5,7.4]) 
+    # dependent variable	
+    y = np.array([5.9, 5.4, 4.4, 4.6, 3.5, 3.7, 2.8, 2.8, 2.4, 1.5])
 
 # weights of dependent variable	
 
