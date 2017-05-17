@@ -6,20 +6,22 @@ linearfit
 Uncertainties in the dependent variables (but not in the independent
 variables) can be taken into account. All inputs have to be numpy matrices.
     
-Math is based on Press' 
+Math is based on Press'
+
 Numerical Receipes p661 : Section 15.2 Fitting Data to a Straight Line
+
 Numerical Receipes p671 : Section 15.4 General Linear Least Squares
 
-Code is based on an early yorick implementation by Damien Segransan (University of Geneva)
+Code is based on an early yorick implementation by Damien Segransan
+(University of Geneva)
+
 Python implementation and tools by Johannes Sahlmann 2009-2017 (University of Geneva, European Space Agency, STScI/AURA)
 
 Please see the test in test_linearfit.py for an example usage.
 
 
-Basic example usage
+Basic example usage (Fitting a straight line to data with uncertainties in y)
 -------------
-
-# Fitting a straight line to data with uncertainties in y
 
 # independent variable
 
@@ -42,12 +44,15 @@ M = np.mat(y);
 S = np.mat(np.diag(wy));        
 
 # matrix of independent variables, here only ones
+
 C = np.mat(np.vstack( (np.ones(len(x)) , x)))    
         
 # initialise object
+
 res = linearfit.LinearFit(M,S,C);
         
-# do the fit 
+# do the fit
+
 res.fit()        
 
 res.display_results()
