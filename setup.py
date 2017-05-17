@@ -19,7 +19,7 @@ except ImportError:
   from distutils.core import setup
   setup
 
-linearfitVersion = '0.1.3'
+linearfitVersion = '0.1.4'
 
 setup(
     name="linearfit",
@@ -35,7 +35,7 @@ setup(
     scripts=['test_linearfit.py'],  # this will be installed to a bin/ directory
     package_data={'': ['LICENSE', 'AUTHORS.rst', 'HISTORY.rst', 'INSTALL', 'MANIFEST.in','README.md','README.rst'],'linearfit': ['*']},
     include_package_data=True,
-    install_requires=["numpy","unittest"],
+    install_requires=["numpy"],
     classifiers=[
       "Development Status :: 2 - Pre-Alpha",
       "Intended Audience :: Developers",

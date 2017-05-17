@@ -62,7 +62,6 @@ successfully tested using python 3.5.
 The following python packages are required:
 
 * numpy
-* unittest
 
 
 How to run the example script
