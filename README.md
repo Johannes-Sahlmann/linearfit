@@ -6,11 +6,9 @@ linearfit
 Uncertainties in the dependent variables (but not in the independent
 variables) can be taken into account. All inputs have to be numpy matrices.
 
-Math is based on Press'
-
-Numerical Receipes p661 : Section 15.2 Fitting Data to a Straight Line
-
-Numerical Receipes p671 : Section 15.4 General Linear Least Squares
+Math is based on Press'  
+Numerical Receipes p661 : Section 15.2 Fitting Data to a Straight Line  
+Numerical Receipes p671 : Section 15.4 General Linear Least Squares  
 
 Code is based on an early yorick implementation by Damien Segransan
 (University of Geneva)
@@ -26,18 +24,23 @@ Basic example usage (Fitting a straight line to data with uncertainties in y)
 ```
 # independent variable
 x = np.array([0.0, 0.9, 1.8, 2.6, 3.3, 4.4, 5.2, 6.1, 6.5,7.4])
+
 # dependent variable	
 y = np.array([5.9, 5.4, 4.4, 4.6, 3.5, 3.7, 2.8, 2.8, 2.4, 1.5])
+
 # weights of dependent variable	
 wy = np.array([1,1.8,4,8,20,20,70,70,100,500])
+
 # prepare matrices
 M = np.mat(y);
 #       diagonal covariance matrix of dependent variables
 S = np.mat(np.diag(wy));
 # matrix of independent variables, here only ones
 C = np.mat(np.vstack( (np.ones(len(x)) , x)))
+
 # initialise object
-res = linearfit.LinearFit(M,S,C);    
+res = linearfit.LinearFit(M,S,C);
+
 # do the fit
 res.fit()
 res.display_results()
@@ -58,30 +61,25 @@ successfully tested using python 3.5.
 
 The following python packages are required:
 
-* `numpy <http://www.numpy.org/>`_
-* `unittest`
+* numpy
+* unittest
 
 
 How to run the example script
 -----------
 
-You may use pip for installation:
+You may use pip for installation:  
+```pip install linearfit```
 
-> pip install linearfit
+Or get the source files, e.g.:   
+```git clone https://github.com/johannes-sahlmann/linearfit```
 
-Or get the source files, e.g.: 
+Install pygacs:  
+```cd linearfit```  
+```python setup.py install --user```
 
-> git clone https://github.com/johannes-sahlmann/linearfit
-
-Install pygacs:
-
-> cd linearfit
-
-> python setup.py install --user
-
-To run the test, do:
-
-> python test_linearfit.py
+To run the test, do:  
+```python test_linearfit.py```
 
 
 License
@@ -99,4 +97,4 @@ WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with
-this program. If not, see `<http://www.gnu.org/licenses/>`_.
+this program. If not, see http://www.gnu.org/licenses/.
