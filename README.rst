@@ -8,8 +8,7 @@ variables) can be taken into account. All inputs have to be numpy matrices.
     
 Math is based on Press'
 
-Numerical Receipes p661 : Section 15.2 Fitting Data to a Straight Line
-
+Numerical Receipes p661 : Section 15.2 Fitting Data to a Straight Line_
 Numerical Receipes p671 : Section 15.4 General Linear Least Squares
 
 Code is based on an early yorick implementation by Damien Segransan
@@ -74,7 +73,7 @@ successfully tested using python 3.5.
 The following python packages are required:
 
 * `numpy <http://www.numpy.org/>`_
-* `unittest`_
+* `unittest`
 
 
 How to run the example script
