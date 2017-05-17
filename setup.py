@@ -33,7 +33,7 @@ setup(
     packages = find_packages(),
     use_2to3 = True,
     scripts=['test_linearfit.py'],  # this will be installed to a bin/ directory
-    package_data={'': ['LICENSE', 'AUTHORS.rst', 'HISTORY.rst', 'INSTALL', 'MANIFEST.in'],'linearfit': ['*']},
+    package_data={'': ['LICENSE', 'AUTHORS.rst', 'HISTORY.rst', 'INSTALL', 'MANIFEST.in','README.md'],'linearfit': ['*']},
     include_package_data=True,
     install_requires=["numpy","unittest"],
     classifiers=[
