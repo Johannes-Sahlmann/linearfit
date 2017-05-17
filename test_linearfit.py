@@ -38,7 +38,9 @@ class LinearFitTestCase(unittest.TestCase):
 
         self.result = res
 
-        if 0==1:                    
+        
+        #         optional comparison with kapteyn (nonlinear fitting) package
+        if 0:                    
             from kapteyn import kmpfit
             def model(p, x):
                a, b = p

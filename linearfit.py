@@ -61,13 +61,18 @@ class LinearFit(object):
         
     """    
 
-    def __init__(self, dependent_variable, inverse_covariance_matrix, independent_variable):        
+    def __init__(self, dependent_variable, inverse_covariance_matrix, independent_variable):    
+        ''' Initialize object '''    
         self.y_i  = dependent_variable
         self.X_ij = independent_variable
         self.inverse_covariance_matrix = inverse_covariance_matrix
 
 
     def fit(self):
+        '''
+        Perform the linear fit. This populates the object attributes.
+        '''
+        
         # number of measurements/constraints, i.e. number of equations
         self.n_measurement   = self.X_ij.shape[1];
         # number of coefficients, i.e. free parameters
@@ -128,6 +133,10 @@ class LinearFit(object):
      
              
     def display_results(self,par_names=None,format=None,precision = 3, scale_factor = 1., nformat='f'):
+        '''
+        Display results on stdout. Optional arguments include parameter names, decimal precision and number format.        
+        '''
+
         if format is None:
             pm_string = '+/-'
         elif format == 'latex': 
@@ -150,6 +159,9 @@ class LinearFit(object):
                 
                 
     def display_correlations(self,par_names=None, format=None):        
+        '''
+        Display correlation matrix on stdout.
+        '''
         
         matrix = self.p_correlation_matrix;        
         # display it
@@ -158,6 +170,9 @@ class LinearFit(object):
     
 
 def display_square_matrix(matrix,par_names=None, format=None):        
+        '''
+        Display a square matrix on stdout. Optional output in latex format.
+        '''
     
         print('*'*10 +' Correlation Matrix '+'*'*10);
         Nmatrix = matrix.shape[0];
