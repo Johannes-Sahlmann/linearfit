@@ -105,7 +105,7 @@ class LinearFit(object):
         self.p_normalised_uncertainty = np.array(stdev_aj).flatten()
         
         # values of the best-fit model
-        self.fit = np.array(yfit_i).flatten()
+        self.fit_values = np.array(yfit_i).flatten()
         
         # Observed - Calculated (O-C) residuals 
         self.residuals = np.array(self.y_i-yfit_i).flatten()
