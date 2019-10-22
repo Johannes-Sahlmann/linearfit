@@ -74,23 +74,23 @@ class LinearFit(object):
         '''
         
         # number of measurements/constraints, i.e. number of equations
-        self.n_measurement   = self.X_ij.shape[1];
+        self.n_measurement   = self.X_ij.shape[1]
         # number of coefficients, i.e. free parameters
-        self.n_param = self.X_ij.shape[0];
+        self.n_param = self.X_ij.shape[0]
         # number of degrees of freedom
-        self.n_freedom  = self.n_measurement - self.n_param;
+        self.n_freedom  = self.n_measurement - self.n_param
   
         
-        A_ij = (self.X_ij) * self.inverse_covariance_matrix;
-        alpha_kj = A_ij * (self.X_ij.T);
-        beta_k = A_ij * self.y_i.T;
+        A_ij = (self.X_ij) * self.inverse_covariance_matrix
+        alpha_kj = A_ij * (self.X_ij.T)
+        beta_k = A_ij * self.y_i.T
     
-        a_j = np.linalg.solve(alpha_kj,beta_k);
+        a_j = np.linalg.solve(alpha_kj,beta_k)
     
-        yfit_i = (self.X_ij.T * a_j).T;
-        chi2 = ((yfit_i-self.y_i)*self.inverse_covariance_matrix)*(yfit_i-self.y_i).T;    
-        C_jk = np.linalg.inv(alpha_kj);  
-        var_aj = np.mat( np.diag(C_jk) );
+        yfit_i = (self.X_ij.T * a_j).T
+        chi2 = ((yfit_i-self.y_i)*self.inverse_covariance_matrix)*(yfit_i-self.y_i).T
+        C_jk = np.linalg.inv(alpha_kj)
+        var_aj = np.mat( np.diag(C_jk) )
         
         #       the variance on the fitted coefficients are the diagonal terms of the coefficient covariance matrix
         #       if the error bars are not well estimated, it is useful to renormalize the variance by the measured chi2
@@ -151,7 +151,8 @@ class LinearFit(object):
                 print('%s\t = %.*e %s %.*e (normalised for chi2=1)  +/- %.*e (formal uncertainty)' % (par_names[i], precision,self.p[i]*scale_factor,pm_string,precision,self.p_normalised_uncertainty[i]*scale_factor, precision,self.p_formal_uncertainty[i]*scale_factor ));
         
         if nformat=='f':
-            print('reduced chi2 = %3.3f\t' % (self.chi2/self.n_freedom), end="")
+            print('reduced chi2 = {:3.3f}\t(chi2 = {:3.3f})\t'.format(self.chi2 / self.n_freedom,
+                                                                     self.chi2), end="")
             print('O-C RMS        %3.3f'   % (np.std(self.residuals)*scale_factor))
         elif nformat=='e':
             print('reduced chi2 = %3.3e\t' % (self.chi2/self.n_freedom), end="")

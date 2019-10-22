@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/91516345.svg)](https://zenodo.org/badge/latestdoi/91516345)
+
 linearfit
 ======
 
