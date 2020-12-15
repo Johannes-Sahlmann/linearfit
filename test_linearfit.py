@@ -2,7 +2,8 @@ from __future__ import print_function
 
 import unittest
 import numpy as np
-import linearfit
+from linearfit import linearfit
+# import linearfit
 
 class LinearFitTestCase(unittest.TestCase):
     def setUp(self):
