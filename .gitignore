@@ -1,3 +1,5 @@
 .idea
 *.pyc
 linearfit.egg-info
+build
+dist

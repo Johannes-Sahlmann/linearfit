@@ -23,13 +23,14 @@ linearfitVersion = '0.1.11'
 
 setup(
     name="linearfit",
-    description="python class that implements a general least-squares fit of a linear model using numpy matrix inversion",
+    description="python package that implements a general least-squares fit of a linear model using numpy matrix inversion",
     version=linearfitVersion,
     author="Johannes Sahlmann",
     author_email="jsahlmann@stsci.edu",
     url="https://github.com/Johannes-Sahlmann/linearfit",
     license="LGPLv3+",
-    long_description="\n"+open("README.rst").read() + "\n\n"    + "Changelog\n"    + "---------\n\n"    + open("HISTORY.rst").read(),
+    # long_description="\n"+open("README.rst").read() + "\n\n"    + "Changelog\n"    + "---------\n\n"    + open("HISTORY.rst").read(),
+    long_description="python package that implements a general least-squares fit of a linear model using numpy matrix inversion",
     packages = find_packages(),
     # use_2to3 = True,
     scripts=['test_linearfit.py'],  # this will be installed to a bin/ directory
