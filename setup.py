@@ -31,7 +31,7 @@ setup(
     license="LGPLv3+",
     long_description="\n"+open("README.rst").read() + "\n\n"    + "Changelog\n"    + "---------\n\n"    + open("HISTORY.rst").read(),
     packages = find_packages(),
-    use_2to3 = True,
+    # use_2to3 = True,
     scripts=['test_linearfit.py'],  # this will be installed to a bin/ directory
     package_data={'': ['LICENSE', 'AUTHORS.rst', 'HISTORY.rst', 'INSTALL', 'MANIFEST.in','README.md','README.rst']},
     include_package_data=True,
