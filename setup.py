@@ -19,7 +19,7 @@ except ImportError:
   from distutils.core import setup
   setup
 
-linearfitVersion = '1.0.0'
+linearfitVersion = '1.0.2'
 
 setup(
     name="linearfit",
