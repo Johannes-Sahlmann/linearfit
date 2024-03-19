@@ -39,7 +39,7 @@ setup(
       "Development Status :: 5 - Production/Stable",
       "Intended Audience :: Developers",
       "Intended Audience :: Science/Research",
-      "License :: OSI Approved :: BSD 3-Clause",
+      "License :: OSI Approved :: BSD License",
       "Operating System :: OS Independent",
       "Programming Language :: Python",
       "Topic :: Scientific/Engineering :: Astronomy",
