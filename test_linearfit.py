@@ -39,37 +39,6 @@ class LinearFitTestCase(unittest.TestCase):
 
         self.result = res
 
-        
-        #         optional comparison with kapteyn (nonlinear fitting) package
-        if 0:                    
-            from kapteyn import kmpfit
-            def model(p, x):
-               a, b = p
-               return a + b*x
-
-            def residuals2(p, data):
-               # Residuals function for data with errors in y only
-               a, b = p
-               x, y, ey = data
-               wi = np.where(ey==0.0, 0.0, 1.0/ey)
-               d = wi*(y-model(p,x))
-               return d
-        
-            # Prepare fit routine
-            beta0 = [5.0, 1.0]         # Initial estimates
-        
-            # Prepare fit routine
-            fitobj2 = kmpfit.Fitter(residuals=residuals2, data=(x, y, erry))
-            fitobj2.fit(params0=beta0)
-            print("\n\n======== Results kmpfit =========")
-            print("Fitted parameters:      ", fitobj2.params)
-            print("Covariance errors:      ", fitobj2.xerror)
-            print("Standard errors         ", fitobj2.stderr)
-            print("Reduced Chi^2:          ", fitobj2.rchi2_min)
-        
-        
-        
-
     def test_linearfit_coefficients(self):
         self.assertTrue(np.max(self.result.p - np.array([6.1001092933631265,-0.6108129531048464])) < 1e-7, 'incorrect solution coefficients')
 

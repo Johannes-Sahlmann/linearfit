@@ -19,7 +19,7 @@ except ImportError:
   from distutils.core import setup
   setup
 
-linearfitVersion = '0.1.11'
+linearfitVersion = '1.0.0'
 
 setup(
     name="linearfit",
@@ -28,20 +28,18 @@ setup(
     author="Johannes Sahlmann",
     author_email="jsahlmann@stsci.edu",
     url="https://github.com/Johannes-Sahlmann/linearfit",
-    license="LGPLv3+",
-    # long_description="\n"+open("README.rst").read() + "\n\n"    + "Changelog\n"    + "---------\n\n"    + open("HISTORY.rst").read(),
+    license="BSD 3-Clause",
     long_description="python package that implements a general least-squares fit of a linear model using numpy matrix inversion",
     packages = find_packages(),
-    # use_2to3 = True,
     scripts=['test_linearfit.py'],  # this will be installed to a bin/ directory
     package_data={'': ['LICENSE', 'AUTHORS.rst', 'HISTORY.rst', 'INSTALL', 'MANIFEST.in','README.md','README.rst']},
     include_package_data=True,
     install_requires=["numpy"],
     classifiers=[
-      "Development Status :: 2 - Pre-Alpha",
+      "Development Status :: 5 - Production/Stable",
       "Intended Audience :: Developers",
       "Intended Audience :: Science/Research",
-      "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+      "License :: OSI Approved :: BSD 3-Clause",
       "Operating System :: OS Independent",
       "Programming Language :: Python",
       "Topic :: Scientific/Engineering :: Astronomy",
